@@ -1,12 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zoo</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="/Js/index.js"></script>
+        <title>Index</title>
 </head>
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand">Zoológico</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Principal</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="equipe.html">Equipe</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    
+    <center>
+        <br>
+        <div class="container">
+            <h2 class="h2">Cadastro de Animais</h2>
+            <form id="formCadastro" onsubmit="cadastrarAnimal(event)" class="container">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <br>
+                <label for="animal">Animal:</label><br>
+                <select id="animal" name="animal" required>
+                    <option value="Leão">Leão</option>
+                    <option value="Tigre">Tigre</option>
+                    <option value="Urso">Urso</option>
+                </select>
+                <br>                   
+                    <input type="submit" value="Cadastrar">
+                <br>
+                </form>
+            </div> <br>
+    
+            <div class="container">    
+                <h2 class="h2">Pesquisa de Animais</h2>
+                <form id="formBusca" onsubmit="buscarAnimais(event)" class="container">
+                    <label for="buscaNome">Nome:</label>
+                    <input type="text" id="buscaNome" name="buscaNome">
+                    <br>
+                    <label for="buscaAnimal">Animal:</label>
+                    <select id="buscaAnimal" name="buscaAnimal">
+                        <option value="Todos">Todos</option>
+                        <option value="Leão">Leão</option>
+                        <option value="Tigre">Tigre</option>
+                        <option value="Urso">Urso</option>
+                        <!-- Adicione mais opções de animais aqui -->
+                    </select>
+                    <br>
+                    <input type="submit" value="Buscar">
+                </form>
+            </div><br>
+    
+            <div class="container">
+                <h2 class="h2">Lista de Animais Cadastrados</h2>
+                <table id="tabelaAnimais" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Animal</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaAnimais" class="row">
+                    </tbody>
+                </table>
+            </div>
+    </center>
     
 </body>
 </html>
